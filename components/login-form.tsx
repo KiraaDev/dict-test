@@ -46,7 +46,7 @@ export default function LoginForm() {
     const role = decoded.user_role;
 
     if (role === "admin") {
-      router.push("/admin");
+      router.push("/admin/dashboard");
       return;
     }
 

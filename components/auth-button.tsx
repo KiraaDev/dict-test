@@ -55,7 +55,7 @@ export default function AuthButton() {
   if (role === "admin") {
     return (
       <Link
-        href="/admin"
+        href="/admin/dashboard"
         className="rounded-lg border px-6 py-3 font-medium shadow-sm transition hover:shadow"
       >
         Go to Dashboard
