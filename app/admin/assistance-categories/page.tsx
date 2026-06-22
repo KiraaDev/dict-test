@@ -7,16 +7,16 @@ export default async function Admin() {
   const cookieStore = await cookies();
   const supabase = createClient(cookieStore);
 
-  const { data, error } = await supabase
-    .from("assistance_categories")
-    .select("*");
+  const { data } = await supabase.from("assistance_categories").select("*");
 
   const assistanceCategories = data as ASSISTANCE_CATEGORY[] | [];
 
   return (
     <>
-    <AssistanceCategoryTable data={assistanceCategories ?? []} />
-    
+    Total {
+     assistanceCategories?.length
+    }
+      <AssistanceCategoryTable data={assistanceCategories ?? []} />
     </>
-  )
+  );
 }
