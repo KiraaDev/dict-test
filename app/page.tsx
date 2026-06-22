@@ -1,23 +1,17 @@
-import { createClient } from "@/lib/supabase/server";
-import { cookies } from "next/headers";
+import AuthButton from "@/components/auth-button";
 
 export default async function Home() {
-  const cookieStore = await cookies();
-  const supabase = createClient(cookieStore);
-
-  const {
-    data: { user },
-    error,
-  } = await supabase.auth.getUser();
-
-  console.log("User:", user);
-  console.log("Error:", error);
-
   return (
-    <div>
-      <h1>Home Page</h1>
-      {user ? <h1>{user.email}</h1> : <h1>Not logged in</h1>}
-      {error && <p>{error.message}</p>}
-    </div>
+    <main className="flex min-h-screen flex-col items-center justify-center px-6">
+      <div className="flex flex-col items-center gap-6 text-center">
+        <div>
+          <h1 className="text-4xl font-bold">Beneficiary Management System</h1>
+          <p className="mt-2 text-sm opacity-70">
+            Manage beneficiaries and assistance categories.
+          </p>
+        </div>
+        <AuthButton />
+      </div>
+    </main>
   );
 }
