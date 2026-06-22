@@ -2,7 +2,7 @@ import { createClient } from "@/lib/supabase/server";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { jwtDecode } from "jwt-decode";
-import { CustomJwtPayload } from "@/type/custom-jwt-payload";
+import { CustomJwtPayload } from "@/types/custom-jwt-payload";
 
 export default async function AdminLayout({
   children,

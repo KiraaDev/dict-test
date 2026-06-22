@@ -1,6 +1,6 @@
 import AssistanceCategoryTable from "@/components/assistance-category-table";
 import { createClient } from "@/lib/supabase/server";
-import { ASSISTANCE_CATEGORY } from "@/type/beneficiary";
+import { ASSISTANCE_CATEGORY } from "@/types/beneficiary";
 import { cookies } from "next/headers";
 
 export default async function Admin() {
@@ -13,9 +13,7 @@ export default async function Admin() {
 
   return (
     <>
-    Total {
-     assistanceCategories?.length
-    }
+      Total {assistanceCategories?.length}
       <AssistanceCategoryTable data={assistanceCategories ?? []} />
     </>
   );

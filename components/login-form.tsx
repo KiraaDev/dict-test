@@ -4,7 +4,7 @@ import { useState } from "react";
 import { jwtDecode } from "jwt-decode";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
-import { CustomJwtPayload } from "@/type/custom-jwt-payload";
+import { CustomJwtPayload } from "@/types/custom-jwt-payload";
 
 export default function LoginForm() {
   const supabase = createClient();
@@ -97,9 +97,7 @@ export default function LoginForm() {
           </div>
 
           {errorMessage && (
-            <div className="rounded-lg border p-3 text-sm">
-              {errorMessage}
-            </div>
+            <div className="rounded-lg border p-3 text-sm">{errorMessage}</div>
           )}
 
           <button

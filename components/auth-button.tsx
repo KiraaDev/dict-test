@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/client";
 import { jwtDecode } from "jwt-decode";
-import { CustomJwtPayload } from "@/type/custom-jwt-payload";
+import { CustomJwtPayload } from "@/types/custom-jwt-payload";
 
 export default function AuthButton() {
   const supabase = createClient();

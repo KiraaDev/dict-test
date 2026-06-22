@@ -1,4 +1,4 @@
-import { ASSISTANCE_CATEGORY } from "@/type/beneficiary";
+import { ASSISTANCE_CATEGORY } from "@/types/beneficiary";
 
 type AssistanceCategoryTableProps = {
   data: ASSISTANCE_CATEGORY[];
